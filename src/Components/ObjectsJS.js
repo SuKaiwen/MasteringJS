@@ -69,6 +69,103 @@ function ObjectsJS(props) {
     // WITH this we can clone using Object.assign({}, user);
     let clone = Object.assign({}, obj1);
     clone.lastName = "mary";
+    
+    // we can have functions in objects
+    // e.g. let user = { ... sayHi() { ... }}
+    // for our functions to access out variables we have to use the this keyword...
+    let ourUser = {
+        name: "john",
+        lastName: "smith",
+
+        fullname(){
+            return this.name + this.lastName;
+        }
+    };
+
+    let fullname = ourUser.fullname();
+
+    // calculator example
+    let calc = {
+        sum(){
+            return this.a + this.b;
+        },
+        sub(){
+            return this.a - this.b;
+        },
+        read(a,b){
+            this.a = a;
+            this.b = b;
+        }
+    }
+
+    calc.read(1,5);
+    let calcSum = calc.sum();
+
+    // Chaining: we can chain functions of an object but
+    // we must return the whole object. returning the func isnt enough
+    let ladder = {
+        step: 0,
+        up(){
+            this.step++;
+            return this;
+        },
+        down(){
+            this.step--;
+            return this;
+        }
+    }
+
+    ladder.up().up().down().up(); // should be 2
+    let steps = ladder.step;
+
+    // NEW operator
+    // a constructor function are regular functions but they are executed with new operator
+    // an example of a constructor function...
+    function Member(name, id){
+        this.name = name;
+        this.id = id;
+        this.admin = false;
+    }
+
+    let newMember = new Member("james", 123);
+    let newMember2 = new Member("bob", 999);
+
+    // what new does is 1) create new empty object and assign to this
+    // 2) function body exeuctes and modifies this
+    // 3) reutrn the value of this
+
+    // optional chaining
+    // sometimes the user will not have a certain property
+    // or a certain property will not be initialised with a value yet
+    // we can get the code to check using optional chaining ?.
+    // if doesn't exist it will not cause error but return undefined
+
+    let incompleteUser = {
+        name: "john",
+        lastName: "smith",
+        address: {
+            streetName: "willow"
+        }
+    }
+
+    // for example if we want to display the details of the user...
+    let details = "";
+    let detailsStreetName = incompleteUser.address?.streetName;
+    let streetNum = incompleteUser.address?.streetNum;
+
+    // We can use optional chaining to do something with 
+    // the error e.g.
+    if (detailsStreetName === undefined){
+        details += "Invalid street name | "
+    } else {
+        details += incompleteUser.address.streetName;
+    }
+
+    if (streetNum === undefined){
+        details += "Invalid street num";
+    } else {
+        details += incompleteUser.address.streetNum;
+    }
 
     return (
         <div>
@@ -81,6 +178,10 @@ function ObjectsJS(props) {
             <p>The user has: {userProps}</p>
             <p>We can assing objects props using Object.assign e.g. {obj1.lastName}</p>
             <p>checking clone last name: {clone.lastName}</p>
+            <p>function in object test: {fullname}</p>
+            <p>calc sum is {calcSum}</p>
+            <p>Ladder step: {steps}</p>
+            <p>street exercise: {details}</p>
         </div>
     );
 }

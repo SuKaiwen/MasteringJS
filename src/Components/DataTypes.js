@@ -26,6 +26,24 @@ function DataTypes(props) {
     let bool1 = Boolean(0); // will be false
     let bool2 = Boolean("abc"); // true
 
+    // object to primitive conversion
+    // we can specify our own toString() and valueOf() functions in our object
+    // toString() will be ran when making a string conv e.g. alert(...)
+    // valueOf() will be ran when making num conv
+
+    function pop(name, pop){
+        return {
+            name,
+            pop,
+            toString: function(){
+                return [name + " | " + pop + " people"];
+            }
+        }
+    }
+
+    let newZealand = pop("NZ", 4000000);
+    let nZtoStr = newZealand.toString();
+
     return (
         <div>
             <h1>Data type basics</h1>
@@ -41,6 +59,7 @@ function DataTypes(props) {
             <p>We converted a number using String(x): typeof {typeof(numStr)}</p>
             <p>String to number: {typeof(numStr2)}</p>
             <p>Boolean example: {String(bool1)} {String(bool2)}</p>
+            <p>object NZ to str: {nZtoStr}</p>
         </div>
     );
 }
