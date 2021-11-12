@@ -9,6 +9,8 @@ import ConditionalOperator from './Components/ConditionalOperator';
 import LoopsSwitch from './Components/LoopsSwitch';
 import ArrowFuncitons from './Components/ArrowFuncitons';
 
+import ObjectsJS from './Components/ObjectsJS';
+
 function App() {
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
       <ConditionalOperator />
       <LoopsSwitch />
       <ArrowFuncitons />
+      <ObjectsJS />
     </div>
   );
 }
