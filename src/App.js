@@ -7,6 +7,7 @@ import Operations from './Components/Operations';
 import Comparisons from './Components/Comparisons';
 import ConditionalOperator from './Components/ConditionalOperator';
 import LoopsSwitch from './Components/LoopsSwitch';
+import ArrowFuncitons from './Components/ArrowFuncitons';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Comparisons />
       <ConditionalOperator />
       <LoopsSwitch />
+      <ArrowFuncitons />
     </div>
   );
 }
