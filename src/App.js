@@ -10,6 +10,7 @@ import LoopsSwitch from './Components/LoopsSwitch';
 import ArrowFuncitons from './Components/ArrowFuncitons';
 
 import ObjectsJS from './Components/ObjectsJS';
+import ClassInheritance from './Components/ClassInheritance';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <LoopsSwitch />
       <ArrowFuncitons />
       <ObjectsJS />
+      <ClassInheritance />
     </div>
   );
 }
