@@ -44,6 +44,37 @@ function DataTypes(props) {
     let newZealand = pop("NZ", 4000000);
     let nZtoStr = newZealand.toString();
 
+    // Spread operator
+    // allows iterable to expand in places where 0+ args
+    // are expected.
+    // mostly used in variable array where 1+ values expected
+    // can be used as a rest operator (where we store the "rest" of the args)
+    function restOp(a, b, ...c){
+        return c;
+    }
+
+    let resultRest = restOp(1, 2, 5, 6, 8, 9);
+    // the result will be 5, 6, 8, 9 because the "rest" of the args
+    // are stored in c array...
+
+    // the spread syntax also turns an array into list of params
+    let arr = [1, 2, 3];
+    // x = Math.max(arr) WILL NOT WORK
+    // but this will...
+    let maximum = Math.max(...arr);
+
+    // other applications
+    // merge arrays
+    let arr1 = [1, 2, 3];
+    let arr2 = [4, 5, 6];
+    let arr3 = [...arr1, ...arr2];
+    // arr3 is 1, 2, 3, 4, 5, 6
+
+    // can be used to copy arr
+    // changing the new arr will not change the original
+    let oldArr = [1,2,3];
+    let newArr = [...oldArr];
+
     return (
         <div>
             <h1>Data type basics</h1>
@@ -60,6 +91,9 @@ function DataTypes(props) {
             <p>String to number: {typeof(numStr2)}</p>
             <p>Boolean example: {String(bool1)} {String(bool2)}</p>
             <p>object NZ to str: {nZtoStr}</p>
+            <p>Result of rest operator: {resultRest}</p>
+            <p>Maximum of ...arr is {maximum}</p>
+            <p>Arr3 is {arr3}</p>
         </div>
     );
 }

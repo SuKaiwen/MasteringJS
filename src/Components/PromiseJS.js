@@ -57,7 +57,36 @@ function PromiseJS(props) {
       .then(result => alert("result done"));
 
     // the order of the above will be done -> result done...
+    
+    // PROMISE CHAINING
+    // we can chain promises together using then function...
+    new Promise(function (resolve, reject) {
+        resolve(1);
+    }).then(function(result){
+        alert(result);
+        return new Promise((resolve, reject) => {
+            resolve(2);
+        });
+    }).then(function(result){
+        alert(result);
+        return new Promise((resolve, reject) => {
+            resolve(3);
+        });
+    }).then(function(result){
+        alert(result);
+    });
 
+    // note: the catch function at the end can catch all errors
+    // not just the reject...
+    // we can have as many then statements
+    // and use a single catch to handle all errors
+    // if we throw in a catch statement, control goes to the next catch 
+    // example:
+    // promise => { ... }
+    // .catch(...){ if can't handle: throw... }
+    // .then(...) { ... }
+    // .catch(...) { we handle the error here... }
+    
     return (
         <div>
             <p>Result of promise is... {resPromise}</p>
