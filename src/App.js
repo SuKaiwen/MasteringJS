@@ -12,6 +12,10 @@ import ArrowFuncitons from './Components/ArrowFuncitons';
 import ObjectsJS from './Components/ObjectsJS';
 import ClassInheritance from './Components/ClassInheritance';
 import TryCatch from './Components/TryCatch';
+import Delimiting from './Components/Delimiting';
+import Currying from './Components/Currying';
+
+import PromiseJS from './Components/PromiseJS';
 
 function App() {
   return (
@@ -25,8 +29,9 @@ function App() {
       <LoopsSwitch />
       <ArrowFuncitons />
       <ObjectsJS />
-      <ClassInheritance />
-      <TryCatch />
+      <Delimiting />
+      <Currying />
+      <PromiseJS />
     </div>
   );
 }
