@@ -11,6 +11,7 @@ import ArrowFuncitons from './Components/ArrowFuncitons';
 
 import ObjectsJS from './Components/ObjectsJS';
 import ClassInheritance from './Components/ClassInheritance';
+import TryCatch from './Components/TryCatch';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <ArrowFuncitons />
       <ObjectsJS />
       <ClassInheritance />
+      <TryCatch />
     </div>
   );
 }
