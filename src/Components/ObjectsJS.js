@@ -119,6 +119,15 @@ function ObjectsJS(props) {
     let steps = ladder.step;
 
     // NEW operator
+    // the NEW keyword does the following...
+    // 1) makes a new object
+    // 2) sets the new object's prototype to be the constructor function's
+    //    external prototype object e.g. new Member will set the prototype
+    //    to be a Member (obj.__proto__ = member)
+    // 3) makes "this" point to the new object
+    // 4) executes the constructor function e.g. this.name = name;
+    // 5) returns the new object
+
     // a constructor function are regular functions but they are executed with new operator
     // an example of a constructor function...
     function Member(name, id){
@@ -127,12 +136,17 @@ function ObjectsJS(props) {
         this.admin = false;
     }
 
+    // Example of what this is doing
+    // 1) makes a new empty object { ... }
+    // 2) sets the object proto to be constructor's external object
+    //    meaning newMember.__proto__ = Member
+    // 3) makes "this" point to obj e.g. this -> newMember
+    // 4) executes constructor function e.g. sets the
+    //    object's (as this is now point to object) name to be 
+    //    "james" and id to be 123
+    // 5) returns the new object (aka we can assign it to newMember) 
     let newMember = new Member("james", 123);
     let newMember2 = new Member("bob", 999);
-
-    // what new does is 1) create new empty object and assign to this
-    // 2) function body exeuctes and modifies this
-    // 3) reutrn the value of this
 
     // optional chaining
     // sometimes the user will not have a certain property

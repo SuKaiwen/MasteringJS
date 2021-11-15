@@ -75,6 +75,37 @@ function DataTypes(props) {
     let oldArr = [1,2,3];
     let newArr = [...oldArr];
 
+    // array methods
+    // learnt it in a previous github post
+    // https://github.com/SuKaiwen/array-functions
+    
+    // basic rundown...
+    // arr.push(...items) will add items to the end
+    // arr.pop() will pop the item from the end and return
+    // arr.shift() will pop an items from the beginning
+    // arr.unshift(items) will add items to the beginning
+    // arr.splice(x, y, ...items) will remove y elements starting at index x
+    //     and insert ...items in that place
+    // arr.slice(x, y) will create a new array with element from index x to y (not inc)
+    // arr.concat(... items) will return NEW arr with old arr but items added to end of it
+    // arr.indexOf(x) and arr.lastIndexof(x) will look for an item and return index or -1
+    // arr.includes(x) return true if x is in arr or false
+    // arr.filter(x => x...) will filter the array returning all values that return true in 
+    //     given function
+    // arr.find(x => x...) will return first val that is true
+    // arr.findIndex(x => x...) will return the index
+    // arr.forEach(func...) will apply func for every element
+    // arr.map(x => x...) will create new array from results of func for every elem
+    // arr.sort(func...) will sort array in place and return it
+    // arr.reverse() reverse arr in place
+    // arr.split()/join() will convert arr to string and back
+    // arr.reduce(func) will calc a single value over the arr by calling func for
+    //     each element...
+    // Array.isArray(arr) checks if arr is an array
+
+    // dates
+    
+
     return (
         <div>
             <h1>Data type basics</h1>
