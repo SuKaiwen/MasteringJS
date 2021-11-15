@@ -16,7 +16,7 @@ import Delimiting from './Components/Delimiting';
 import Currying from './Components/Currying';
 
 import PromiseJS from './Components/PromiseJS';
-
+import Recursion from './Components/Recursion';
 function App() {
   return (
     <div className="App">
@@ -31,7 +31,7 @@ function App() {
       <ObjectsJS />
       <Delimiting />
       <Currying />
-      <PromiseJS />
+      <Recursion />
     </div>
   );
 }
