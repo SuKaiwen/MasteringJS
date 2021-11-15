@@ -17,6 +17,8 @@ import Currying from './Components/Currying';
 
 import PromiseJS from './Components/PromiseJS';
 import Recursion from './Components/Recursion';
+import NFE from './Components/NFE';
+
 function App() {
   return (
     <div className="App">
@@ -32,6 +34,7 @@ function App() {
       <Delimiting />
       <Currying />
       <Recursion />
+      <NFE />
     </div>
   );
 }
