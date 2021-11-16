@@ -19,22 +19,13 @@ import PromiseJS from './Components/PromiseJS';
 import Recursion from './Components/Recursion';
 import NFE from './Components/NFE';
 
+import Decorator from './Components/Decorator';
 function App() {
   return (
     <div className="App">
       <h1>Learning JS</h1>
-      <DataTypes />
-      <InteractionsJS />
-      <Operations />
-      <Comparisons />
-      <ConditionalOperator />
-      <LoopsSwitch />
-      <ArrowFuncitons />
-      <ObjectsJS />
-      <Delimiting />
-      <Currying />
-      <Recursion />
-      <NFE />
+      <p>Hello</p>
+      <Decorator />
     </div>
   );
 }
