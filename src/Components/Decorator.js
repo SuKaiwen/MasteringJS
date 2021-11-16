@@ -43,6 +43,18 @@ function Decorator(props) {
     // here we pass in the dataDetails2 function
     let data2 = logData(dataDetails2, "Warehouse", "Monday");
     
+    // example 3
+    // we can also use func.call(context, args)
+    function checkin(date){
+        return "Checked in at: " + date;
+    }
+
+    function flightFunc(func, flightNum, date){
+        let result = flightNum + " | " + func.apply(this, arguments);
+    }
+
+    let data3 = flightFunc(checkin, "12345", "Monday");
+
     return (
         <div>
             <p>pepe</p>
@@ -50,6 +62,8 @@ function Decorator(props) {
             <p>{greeting1}</p>
             <p>{data1}</p>
             <p>{data2}</p>
+            <p>{data3}</p>
+            <p>pepe</p>
         </div>
     );
 }
