@@ -26,6 +26,7 @@ function App() {
       <h1>Learning JS</h1>
       <p>Hello</p>
       <Decorator />
+      <DataTypes />
     </div>
   );
 }

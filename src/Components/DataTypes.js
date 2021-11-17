@@ -104,7 +104,34 @@ function DataTypes(props) {
     // Array.isArray(arr) checks if arr is an array
 
     // dates
-    
+    // created using new Date()
+    let myDate = new Date();
+
+    // we can also create a date using ms
+    // e.g. 10 will be 10ms after jan 1 1970
+    let myDate2 = new Date(10);
+
+    // we can also pass a string
+    let myDate3 = new Date("2019-01-01");
+
+    // we can also do
+    // new Date(year, month, date, hour, minute, sec, ms)
+    // if we leave some param out it will be 0 by def
+    let myDate4 = new Date(2011, 0, 1);
+
+    // we can access components using 
+    // getFullYear() returns xxxx date
+    // getMonth() returns 0-11
+    // getDate() returns 1-31
+    // getHour()
+    // getMin()
+    // getSeconds()
+    // getMilliseconds()
+    // getDay() gets day of week from 0 (sunday) - 6 (sat)
+
+    // getTime() will return the time in ms past jan 1st 1970
+    // getTimezoneOffset() will return the diff between UTC and local
+    // in minutes
 
     return (
         <div>
