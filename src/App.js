@@ -20,14 +20,13 @@ import Recursion from './Components/Recursion';
 import NFE from './Components/NFE';
 
 import Decorator from './Components/Decorator';
+import Generators from './Components/Generators';
 function App() {
   return (
     <div className="App">
       <h1>Learning JS</h1>
       <p>Hello</p>
-      <Decorator />
-      <DataTypes />
-      <PromiseJS />
+      <Generators />
     </div>
   );
 }
