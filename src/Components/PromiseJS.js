@@ -87,6 +87,61 @@ function PromiseJS(props) {
     // .then(...) { ... }
     // .catch(...) { we handle the error here... }
     
+    // ASYNC and AWAIT
+    // lets say we have the following functions
+    function makeReq(location){
+        return new Promise((resolve, reject) => {
+            console.log("Making request to: " + location);
+            if(location === "Github"){
+                resolve("Talked to Github");
+            }else{
+                reject("Sorry, we only accept Github as location");
+            }
+        });
+    }
+
+    function processReq(response){
+        return new Promise((resolve, reject) => {
+            console.log("Processing...");
+            resolve("Do something with response: " + response);
+        });
+    }
+
+    // basics of the code
+    // first we make the response to github
+    // then we get the promise returned and process the response
+    // using .then then we return THAT promise returned
+    // by the processreq to use it
+    // in the chained then statement
+    makeReq("Github").then(response => {
+        console.log("Response recieved");
+        return processReq(response);
+    }).then(response2 => {
+        console.log(response2);
+    }).catch(err => {
+        console.log(err);
+    })
+
+    // now we want to use async await...
+    // denoted by async keyword
+    // we can only use await if we have async
+    // await means that JS will do other work
+    // while we "await" the response
+    
+    // Now this code above will work the same as the previous section
+    // To handle errors we can use try catch...
+    async function doWork(){
+        try{
+            const response = await makeReq("Google");
+            console.log("Response recieved");
+            const processRes = await processReq(response);
+            console.log(processRes);
+        }catch(err){
+            console.log(err);
+        }
+        
+    }
+
     return (
         <div>
             <p>Result of promise is... {resPromise}</p>

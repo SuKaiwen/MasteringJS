@@ -27,6 +27,7 @@ function App() {
       <p>Hello</p>
       <Decorator />
       <DataTypes />
+      <PromiseJS />
     </div>
   );
 }
