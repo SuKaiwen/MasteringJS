@@ -36,3 +36,24 @@
     transform: rotate(360deg);
   }
 }
+
+.grandparent {
+  background-color: red;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.parent{
+  background-color: orange;
+  width: 150px;
+  height: 150px;
+  margin:auto;
+}
+
+.child{
+  background-color: green;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+}
