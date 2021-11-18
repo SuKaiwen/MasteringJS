@@ -21,12 +21,14 @@ import NFE from './Components/NFE';
 
 import Decorator from './Components/Decorator';
 import Generators from './Components/Generators';
+import ProxyJs from './Components/ProxyJS';
+
 function App() {
   return (
     <div className="App">
       <h1>Learning JS</h1>
       <p>Hello</p>
-      <Generators />
+      <ProxyJs />
     </div>
   );
 }
